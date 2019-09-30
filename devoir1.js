@@ -51,7 +51,7 @@ print(sol)
 print("#Q2")
 maison.find(
    {
-     coordinates: {
+     "coordinates": {
         $nearSphere: {
            $geometry: {
               type : "Point",

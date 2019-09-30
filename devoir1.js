@@ -54,7 +54,8 @@ maison.find(
      "coordinates": {
         $nearSphere: {
            $geometry:ulaval
-        }
+        },
+           maxDistance:1000/1
      }
    }
 );

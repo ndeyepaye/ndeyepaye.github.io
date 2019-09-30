@@ -87,4 +87,3 @@ maison.find().sort({price:-1})[0].price
 // ville commence par une lettre majuscule!
 print("#Q9")
 maison.find({$and:[{listing_id:{$not:/.*rive-sud.*/}} ,{listing_id:{$not:/.*chaudiere-appalaches.*/}},{heating_source:{$nin:["Thermopompe","Bois"]}}]})[0].listing_id.split("/")[3].toUpperCase()
-

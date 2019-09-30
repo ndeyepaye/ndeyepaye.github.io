@@ -86,4 +86,4 @@ maison.find().sort({price:-1})[0].price
 // 9. Pouvez-vous m'extraire automatiquement le nom de la ville dans laquelle se trouve votre maison de rêves? N'oubliez pas que le nom d'une 
 // ville commence par une lettre majuscule!
 print("#Q9")
-maison.findOne({_id:ObjectId("5a19c5ebf16397d8cb4c779d"}).listing_id.split("/")[3].toUpperCase()
+maison.find({$and:[{listing_id:{$not:/.*rive-sud.*/}} ,{listing_id:{$not:/.*chaudiere-appalaches.*/}},{heating_source:{$nin:["Thermopompe","Bois"]}}]})[0].listing_id.split("/")[3].toUpperCase()

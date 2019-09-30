@@ -36,10 +36,13 @@ ulaval= {
 
 // 1. Quel champ de la base de données contient un index géospatial?
 tes4t =db["system.indexes"].findOne({"2dsphereIndexVersion": {$exists:true}})
+sol=""
 for(t in tes4t.key){
-print("#Q1")
-print(t)
+sol=t
+
 }
+print("#Q1")
+print(sol)
 
 
 

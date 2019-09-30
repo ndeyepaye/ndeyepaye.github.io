@@ -53,11 +53,7 @@ maison.find(
    {
      "coordinates": {
         $nearSphere: {
-           $geometry: {
-              type : "Point",
-              coordinates : [ -71.274410, 46.778665 ]
-           },
-           $maxDistance: 10000
+           $geometry:ulaval
         }
      }
    }

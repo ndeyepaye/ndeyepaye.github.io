@@ -35,7 +35,7 @@ ulaval= {
 
 
 // 1. Quel champ de la base de données contient un index géospatial?
-tes4t =db[‘system.indexes’].findOne({“2dsphereIndexVersion”: {$exists:true}})
+tes4t =db["system.indexes"].findOne({"2dsphereIndexVersion": {$exists:true}})
 print("#Q1")
 for(t in tes4t.key){
 print("#Q1")
@@ -61,7 +61,7 @@ maison.find({price:{$gte :200000,$lte:450000}}).count()
 // 5. De plus, vous détestez l'humidité l'été (vous voulez une thermopompe) et le chauffage par plinthe, mais vous aimez le chauffage à bois! 
 // Combien de maisons répondent à tous ces critères
 print("#Q5")
-maison.find({$and:[{heating_source:{$nin:[“Plintre”]}},{heating_source:{$in:[“Thermopompe”,”Bois”]}}]}).count()
+maison.find({$and:[{heating_source:{$nin:["Plintre"]}},{heating_source:{$in:["Thermopompe","Bois"]}}]}).count()
 
 // 6. Pour des soucis d'uniformité, vous désirez une maison avec un seul élément composant sa façade extérieure! Combien de maisons répondent à ce critère?
 print("#Q6")
@@ -73,7 +73,7 @@ maison.find({external_facing:{$size:1}}).toArray()
 // Vous êtes prêt à vous débarrasser de votre thermopompe ou votre chauffage au bois pour ne pas avoir de mention rive-sud ou
 // chaudiere-appalaches dans l'identifiant (URL) de la maison. Combien de maisons répondent à ce critère ?
 print("#Q7")
-maison.find({$and:[{listing_id:{/.*rive-sud.*/ ,/.*chaudiere-appalaches.*/]}},{heating_source:{$nin:[“Thermopompe”,”Bois”]}}]}).count()
+maison.find({$and:[{listing_id:{/.*rive-sud.*/ ,/.*chaudiere-appalaches.*/]}},{heating_source:{$nin:["Thermopompe","Bois"]}}]}).count()
 
 // 8. Comme vous savez que vous allez faire beaucoup de $$$ dans le futur, vous décidez d'hypothéquer votre vie avec la maison la plus chère du lot.
 // Combien coute-t-elle ? (je désire le prix de la base de données - et non pas celle du site!)
@@ -83,4 +83,4 @@ maison.find().sort({price:-1})[0]
 // 9. Pouvez-vous m'extraire automatiquement le nom de la ville dans laquelle se trouve votre maison de rêves? N'oubliez pas que le nom d'une 
 // ville commence par une lettre majuscule!
 print("#Q9")
-maison.findOne({_id:ObjectId(“5a19c5ebf16397d8cb4c779d”}).listing_id.split(“/”)[3].toUpperCase()
+maison.findOne({_id:ObjectId("5a19c5ebf16397d8cb4c779d"}).listing_id.split("/")[3].toUpperCase()

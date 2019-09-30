@@ -73,7 +73,7 @@ maison.find({external_facing:{$size:1}}).toArray()
 // Vous êtes prêt à vous débarrasser de votre thermopompe ou votre chauffage au bois pour ne pas avoir de mention rive-sud ou
 // chaudiere-appalaches dans l'identifiant (URL) de la maison. Combien de maisons répondent à ce critère ?
 print("#Q7")
-maison.find({$and:[{listing_id:{/.*rive-sud.*/ ,/.*chaudiere-appalaches.*/]}},{heating_source:{$nin:["Thermopompe","Bois"]}}]}).count()
+maison.find({$and:[{listing_id:{/.*rive-sud.*/ ,/.*chaudiere-appalaches.*/}},{heating_source:{$nin:["Thermopompe","Bois"]}}]}).count()
 
 // 8. Comme vous savez que vous allez faire beaucoup de $$$ dans le futur, vous décidez d'hypothéquer votre vie avec la maison la plus chère du lot.
 // Combien coute-t-elle ? (je désire le prix de la base de données - et non pas celle du site!)

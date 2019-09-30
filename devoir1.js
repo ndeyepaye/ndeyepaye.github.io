@@ -79,7 +79,7 @@ maison.find({$and:[{listing_id:{$not:/.*rive-sud.*/}} ,{listing_id:{$not:/.*chau
 // 8. Comme vous savez que vous allez faire beaucoup de $$$ dans le futur, vous décidez d'hypothéquer votre vie avec la maison la plus chère du lot.
 // Combien coute-t-elle ? (je désire le prix de la base de données - et non pas celle du site!)
 print("#Q8")
-maison.find().sort({price:-1})[0]
+maison.find().sort({price:-1})[0].price
 
 // 9. Pouvez-vous m'extraire automatiquement le nom de la ville dans laquelle se trouve votre maison de rêves? N'oubliez pas que le nom d'une 
 // ville commence par une lettre majuscule!

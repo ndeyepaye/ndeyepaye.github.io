@@ -57,7 +57,7 @@ maison.find(
               type : "Point",
               coordinates : [ -71.274410, 46.778665 ]
            },
-           maxDistance: 5000
+           $maxDistance: 10000
         }
      }
    }

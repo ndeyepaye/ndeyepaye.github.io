@@ -66,7 +66,7 @@ maison.find({$and:[{heating_source:{$nin:["Plintre"]}},{heating_source:{$in:["Th
 // 6. Pour des soucis d'uniformité, vous désirez une maison avec un seul élément composant sa façade extérieure! Combien de maisons répondent à ce critère?
 print("#Q6")
 maison.find({external_facing:{$size:1}}).count()
-//maison.find({external_facing:{$size:1}}).toArray()
+
 
 
 // 7. Bravo! vous avez trouve la maison de vos rêves! regardez la bien! Oh non! Elle est SUR LA RIVE SUD DE QUÉBEC!

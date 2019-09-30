@@ -47,8 +47,9 @@ print(sol)
 
 
 // 2. Combien de maisons à vendre y a-t-il dans un rayon de 10km de votre emplacement actuel?
-print("#Q2")
 
+print("#Q2")
+maison.find({"coordinates":{ $near: [-71.274410, 46.778665 ],$maxDistance: 10/3959}});
 
 // 3. Combien de maisons à vendre y a-t-il dans la zone précédente si on enlève les maisons à l'intérieur de 1km?
 // Hint. si vous multipliez la reponse de la question 2 et de la question 3 - et que vous la passez un md5 hash, vous devriez obtenir  66351ff66c1492921628337667462b5a 

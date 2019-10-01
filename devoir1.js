@@ -50,15 +50,16 @@ print(sol)
 
 print("#Q2")
 maison.find(
+   [
    {
-     "coordinates": {
-        $near: {
-           $geometry:ulaval
-        },
-           $maxDistance:1000/1
+     $geoNear: {
+        near: ulaval,
+        distanceField: "distance",
+        maxDistance: 10,
+        spherical: true
      }
    }
-);
+])
 
 // 3. Combien de maisons à vendre y a-t-il dans la zone précédente si on enlève les maisons à l'intérieur de 1km?
 // Hint. si vous multipliez la reponse de la question 2 et de la question 3 - et que vous la passez un md5 hash, vous devriez obtenir  66351ff66c1492921628337667462b5a 

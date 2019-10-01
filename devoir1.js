@@ -75,11 +75,12 @@ maison.aggregate(
         distanceField: "distance",
         distanceMultiplier: 0.000621371,
         maxDistance: (10000000 * 1609.34),
-        minDistance:(100000*1609.34),
         spherical: true
      }
    }
-]).toArray().length
+]).toArray().filter(function (el) {
+  return el.distance <= 1000
+}).length
 
 // 4. Le prix que vous désirez payer est entre 200 000 et 450 000. Combien de maisons répondent à ce critère?
 print("#Q4")

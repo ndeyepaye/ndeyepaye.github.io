@@ -52,7 +52,7 @@ print("#Q2")
 maison.find(
    {
      "coordinates": {
-        $nearSphere: {
+        $near: {
            $geometry:ulaval
         },
            maxDistance:1000/1

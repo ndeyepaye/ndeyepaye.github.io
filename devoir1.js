@@ -67,7 +67,19 @@ maison.aggregate(
 // 3. Combien de maisons à vendre y a-t-il dans la zone précédente si on enlève les maisons à l'intérieur de 1km?
 // Hint. si vous multipliez la reponse de la question 2 et de la question 3 - et que vous la passez un md5 hash, vous devriez obtenir  66351ff66c1492921628337667462b5a 
 print("#Q3")
-
+maison.aggregate(
+   [
+   {
+     $geoNear: {
+        near: ulaval,
+        distanceField: "distance",
+        distanceMultiplier: 0.000621371,
+        maxDistance: (10000000 * 1609.34),
+        minDistance:(100000*1609.34),
+        spherical: true
+     }
+   }
+]).toArray().length
 
 // 4. Le prix que vous désirez payer est entre 200 000 et 450 000. Combien de maisons répondent à ce critère?
 print("#Q4")

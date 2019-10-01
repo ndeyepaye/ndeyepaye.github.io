@@ -78,9 +78,7 @@ maison.aggregate(
         spherical: true
      }
    }
-]).toArray().filter(function (el) {
-  return el.distance <= 1000
-}).length
+]).toArray()
 
 // 4. Le prix que vous désirez payer est entre 200 000 et 450 000. Combien de maisons répondent à ce critère?
 print("#Q4")

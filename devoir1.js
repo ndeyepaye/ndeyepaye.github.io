@@ -49,19 +49,19 @@ print(sol)
 // 2. Combien de maisons à vendre y a-t-il dans un rayon de 10km de votre emplacement actuel?
 
 print("#Q2")
-maison.find({
-    $and:[
-        {"price":{$gte:200000, $lte:450000}},
-        {"coordinates":{
-                $near:{
-                    $geometry:ulaval, 
-                    $minDistance:1000,
-                    $maxDistance:10000
-                }
-            }
-        }
-    ]
-}).count()
+maison.aggregate(
+   [
+   {
+     $geoNear: {
+        near: ulaval,
+        distanceField: "distance",
+        distanceMultiplier: 0.000621371,
+        maxDistance: (10000000 * 1609.34),
+        spherical: true
+     }
+   }
+]).toArray().length
+
 
 
 // 3. Combien de maisons à vendre y a-t-il dans la zone précédente si on enlève les maisons à l'intérieur de 1km?

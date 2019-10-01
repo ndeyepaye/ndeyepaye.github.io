@@ -55,7 +55,7 @@ maison.find(
         $near: {
            $geometry:ulaval
         },
-           maxDistance:1000/1
+           $maxDistance:1000/1
      }
    }
 );

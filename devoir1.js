@@ -55,6 +55,8 @@ maison.aggregate(
      $geoNear: {
         near: ulaval,
         distanceField: "distance",
+        distanceMultiplier: 0.000621371,
+        maxDistance: (1000000 * 1609.34),
         spherical: true
      }
    }

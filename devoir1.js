@@ -49,7 +49,7 @@ print(sol)
 // 2. Combien de maisons à vendre y a-t-il dans un rayon de 10km de votre emplacement actuel?
 
 print("#Q2")
-maison.find(
+maison.aggregate(
    [
    {
      $geoNear: {

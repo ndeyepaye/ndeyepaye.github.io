@@ -79,7 +79,7 @@ maison.aggregate(
      }
    }
 ]).toArray().filter(function (el) {
-  return el.distance <= 10000
+  return el.distance >= 1000
 }).length
 
 // 4. Le prix que vous désirez payer est entre 200 000 et 450 000. Combien de maisons répondent à ce critère?

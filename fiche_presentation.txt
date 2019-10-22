@@ -1,0 +1,19 @@
+Présentation orale - Equipe 2
+ 
+Date de la présentation
+| Date | Préférence (1 à 4) 
+
+| 5 novembre 2019   | 4 |  
+| 12 novembre 2019  | 3|  
+| 19 novembre 2019  | 2 |  
+| 26 novembre 2019  | 1 |    
+
+Sujet de la présentation 
+| Date | Préférence (1 à 6) 
+
+| Cassandra                 | 2 |  
+| Les messages Cues (redis) | 6 |  
+| InfluxDB (time series db) | 4 |  
+| BD par colonnes           | 3 |  
+| Infrastructure AWS        | 1 |  
+| Données Google            | 5 |  
